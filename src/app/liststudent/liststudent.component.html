@@ -1,0 +1,27 @@
+<h3>Retrieve Students</h3>
+<div>
+    <table class="table table-hover table-border">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>COURSE</th>
+                <th>FEE</th>
+                <th>MARKS</th>
+                <th>OPERATIONS</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let stu of allStudent">
+                <td>{{stu.id}}</td>
+                <td>{{stu.name}}</td>
+                <td>{{stu.course}}</td>
+                <td>{{stu.fee}}</td>
+                <td>{{stu.marks}}</td>
+                <td><button (click)="deleteStudent(stu.id)" class="btn btn-danger">DELETE</button>
+                    <a routerLink="/update/{{stu.id}}" class="btn btn-info">UPDATE</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
